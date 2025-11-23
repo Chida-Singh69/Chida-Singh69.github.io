@@ -36,7 +36,7 @@ function App() {
   const renderSection = () => {
     switch(currentSection) {
       case 'home':
-        return <Home mode={mode} />;
+        return <Home mode={mode} onNavigate={handleNavClick} />;
       case 'projects':
         return <Projects mode={mode} />;
       case 'experience':
@@ -110,16 +110,14 @@ function App() {
       {/* Left Sidebar - Info & Mode Toggle */}
       <div className="minecraft-left-sidebar">
         <div className="sidebar-item home-button" onClick={() => handleNavClick('home')} data-tooltip="Home">
-          <img src="/assets/minecraft_grass_block.png" alt="Home" className="sidebar-icon" />
+          <img src="/assets/minecraft_ender_pearl.png" alt="Home" className="sidebar-icon" />
         </div>
-        <div className="sidebar-item mode-toggle" onClick={toggleMode} data-tooltip={mode === 'overworld' ? 'Switch to Nether' : 'Switch to Overworld'}>
-          <div className="mode-toggle-button">
-            <img 
-              src={mode === 'overworld' ? '/src/assets/minecraft_grass_block.png' : '/src/assets/minecraft_netherrack.png'} 
-              alt={mode} 
-              className="mode-toggle-icon"
-            />
-          </div>
+        <div className="sidebar-item mode-toggle" onClick={toggleMode} data-tooltip={mode === 'overworld' ? 'Nether' : 'Overworld'}>
+          <img 
+            src={mode === 'overworld' ? '/assets/minecraft_nether_bricks.png' : '/assets/minecraft_bricks.png'} 
+            alt={mode === 'overworld' ? 'Nether' : 'Overworld'} 
+            className="mode-toggle-icon"
+          />
         </div>
       </div>
       

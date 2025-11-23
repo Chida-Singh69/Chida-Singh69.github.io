@@ -98,13 +98,12 @@
   align-items: center;
   border-right: 4px solid rgba(25, 25, 25, 0.7);
   width: fit-content;
+  justify-content: space-between;
 }
 
 .sidebar-item {
   position: relative;
   cursor: pointer;
-  background-color: rgba(198, 198, 198, 0.7);
-  border: 3px solid rgba(51, 51, 51, 0.8);
   padding: 10px;
   width: 60px;
   height: 60px;
@@ -112,22 +111,26 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s;
-  backdrop-filter: blur(1px);
 }
 
 .sidebar-item:hover {
   transform: translateX(5px);
-  border-color: #555555;
 }
 
 .sidebar-item.home-button:hover {
-  background-color: #aaaaaa;
+  transform: translateX(5px) scale(1.1);
 }
 
 .sidebar-icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   image-rendering: pixelated;
+  transition: all 0.2s;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.sidebar-item:hover .sidebar-icon {
+  filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
 }
 
 /* Mode Toggle in Sidebar */
@@ -135,29 +138,21 @@
   background: transparent;
   border: none;
   padding: 0;
-  width: auto;
-  height: auto;
-}
-
-.sidebar-item.mode-toggle .mode-toggle-button {
   width: 60px;
   height: 60px;
-  border-radius: 8px;
-  padding: 8px;
 }
 
 .sidebar-item.mode-toggle .mode-toggle-icon {
-  width: 100%;
-  height: 100%;
-  position: static;
-  transform: none !important;
-  border-radius: 4px;
-  padding: 6px;
+  width: 50px;
+  height: 50px;
+  image-rendering: pixelated;
+  transition: all 0.2s;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
-.sidebar-item.mode-toggle .mode-toggle-icon img {
-  width: 100%;
-  height: 100%;
+.sidebar-item.mode-toggle:hover .mode-toggle-icon {
+  filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
+  transform: scale(1.1);
 }
 
 /* Right Sidebar */
@@ -268,79 +263,7 @@
   align-items: center;
 }
 
-/* Mode Toggle Button Styling */
-.mode-toggle-button {
-  cursor: pointer;
-  user-select: none;
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, rgba(71, 122, 30, 0.9) 0%, rgba(112, 178, 55, 0.9) 100%);
-  border: 4px solid rgba(55, 55, 55, 0.9);
-  border-right-color: rgba(139, 139, 139, 0.9);
-  border-bottom-color: rgba(139, 139, 139, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  box-shadow: 
-    0 4px 12px rgba(0, 0, 0, 0.5),
-    inset 0 2px 4px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
-  position: relative;
-  overflow: hidden;
-}
-
-.mode-toggle-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(139, 31, 31, 0.9) 0%, rgba(255, 107, 26, 0.9) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 0;
-}
-
-.minecraft-world.nether .mode-toggle-button::before {
-  opacity: 1;
-}
-
-.mode-toggle-icon {
-  width: 100%;
-  height: 100%;
-  image-rendering: pixelated;
-  position: relative;
-  z-index: 2;
-  background: linear-gradient(135deg, rgba(90, 90, 90, 0.95) 0%, rgba(58, 58, 58, 0.95) 100%);
-  border: 3px solid rgba(55, 55, 55, 0.9);
-  border-right-color: rgba(139, 139, 139, 0.9);
-  border-bottom-color: rgba(139, 139, 139, 0.9);
-  border-radius: 4px;
-  padding: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-.minecraft-world.nether .mode-toggle-icon {
-  box-shadow: 
-    0 2px 8px rgba(255, 107, 26, 0.6),
-    0 0 15px rgba(255, 107, 26, 0.3);
-}
-
-.mode-toggle-icon img {
-  width: 100%;
-  height: 100%;
-  image-rendering: pixelated;
-}
-
-/* Bottom Navigation - Keep for backward compatibility but hide */
+/* Remove old bottom navigation styles */
 .minecraft-bottom-nav {
   display: none;
 }
@@ -861,20 +784,20 @@
   border-color: var(--overworld-dark-brown);
 }
 
-.minecraft-world.overworld .sidebar-item {
-  background-color: rgba(112, 178, 55, 0.8);
-  border-color: var(--overworld-dark-brown);
+.minecraft-world.overworld .sidebar-item .sidebar-icon {
+  filter: drop-shadow(0 0 8px rgba(143, 202, 92, 0.4)) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
-.minecraft-world.overworld .sidebar-item:hover {
-  background-color: rgba(143, 202, 92, 0.9);
-  border-color: var(--overworld-brown);
+.minecraft-world.overworld .sidebar-item:hover .sidebar-icon {
+  filter: drop-shadow(0 0 12px rgba(143, 202, 92, 0.6)) drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
 }
 
-.minecraft-world.overworld .sidebar-item.home-button:hover {
-  background-color: var(--overworld-light);
-  border-color: var(--overworld-dark-brown);
-  box-shadow: 0 3px 5px rgba(71, 122, 30, 0.5);
+.minecraft-world.overworld .sidebar-item.mode-toggle .mode-toggle-icon {
+  filter: drop-shadow(0 0 8px rgba(143, 202, 92, 0.6)) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.minecraft-world.overworld .sidebar-item.mode-toggle:hover .mode-toggle-icon {
+  filter: drop-shadow(0 0 12px rgba(143, 202, 92, 0.8)) drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
 }
 
 .minecraft-world.overworld .sidebar-nav-item.active .sidebar-nav-icon {
@@ -951,21 +874,20 @@
   border-color: var(--nether-dark);
 }
 
-.minecraft-world.nether .sidebar-item {
-  background-color: rgba(139, 31, 31, 0.8);
-  border-color: var(--nether-dark);
+.minecraft-world.nether .sidebar-item .sidebar-icon {
+  filter: drop-shadow(0 0 10px rgba(255, 107, 26, 0.4)) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
-.minecraft-world.nether .sidebar-item:hover {
-  background-color: rgba(255, 107, 26, 0.8);
-  border-color: var(--nether-secondary);
-  box-shadow: 0 0 10px rgba(255, 107, 26, 0.4);
+.minecraft-world.nether .sidebar-item:hover .sidebar-icon {
+  filter: drop-shadow(0 0 15px rgba(255, 107, 26, 0.6)) drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
 }
 
-.minecraft-world.nether .sidebar-item.home-button:hover {
-  background-color: var(--nether-accent);
-  border-color: var(--nether-dark);
-  box-shadow: 0 3px 5px rgba(255, 107, 26, 0.6), 0 0 15px rgba(255, 107, 26, 0.3);
+.minecraft-world.nether .sidebar-item.mode-toggle .mode-toggle-icon {
+  filter: drop-shadow(0 0 10px rgba(255, 107, 26, 0.6)) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.minecraft-world.nether .sidebar-item.mode-toggle:hover .mode-toggle-icon {
+  filter: drop-shadow(0 0 15px rgba(255, 107, 26, 0.9)) drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
 }
 
 .minecraft-world.nether .sidebar-nav-item.active .sidebar-nav-icon {

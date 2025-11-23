@@ -13,7 +13,130 @@
   overflow: hidden;
   background: transparent;
   padding: 20px;
-  gap: 15px;
+  gap: 20px;
+}
+
+/* Welcome Box */
+.welcome-box {
+  background: linear-gradient(180deg, rgba(139, 69, 19, 0.95) 0%, rgba(101, 67, 33, 0.95) 100%);
+  border: 3px solid rgba(0, 0, 0, 0.8);
+  box-shadow: 
+    inset 2px 2px 0 rgba(255, 255, 255, 0.3),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.5),
+    0 4px 0 rgba(26, 26, 26, 0.8);
+  padding: 12px 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.welcome-icon {
+  width: clamp(20px, 3vw, 28px);
+  height: clamp(20px, 3vw, 28px);
+  image-rendering: pixelated;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+.welcome-text {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(0.6rem, 1.5vw, 0.9rem);
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+  image-rendering: pixelated;
+}
+
+/* Home Subtitle */
+.home-subtitle {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(0.6rem, 1.5vw, 0.9rem);
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 2px 2px 0 #000;
+  text-align: center;
+  max-width: 600px;
+  line-height: 1.8;
+  margin: 0;
+  z-index: 10;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.minecraft-button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(0.6rem, 1.2vw, 0.8rem);
+  padding: 12px 24px;
+  border: 3px solid rgba(0, 0, 0, 0.8);
+  box-shadow: 
+    inset 2px 2px 0 rgba(255, 255, 255, 0.3),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.5),
+    0 4px 0 rgba(26, 26, 26, 0.8);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  image-rendering: pixelated;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+  backdrop-filter: blur(3px);
+  text-decoration: none;
+}
+
+.minecraft-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    inset 2px 2px 0 rgba(255, 255, 255, 0.4),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.6),
+    0 6px 0 rgba(26, 26, 26, 0.8);
+}
+
+.minecraft-button:active {
+  transform: translateY(1px);
+  box-shadow: 
+    inset 2px 2px 0 rgba(255, 255, 255, 0.2),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.5),
+    0 2px 0 rgba(26, 26, 26, 0.8);
+}
+
+.minecraft-button.download-resume {
+  background: linear-gradient(180deg, rgba(113, 170, 52, 0.95) 0%, rgba(88, 124, 39, 0.95) 100%);
+}
+
+.minecraft-button.contact-me {
+  background: linear-gradient(180deg, rgba(160, 82, 45, 0.95) 0%, rgba(139, 69, 19, 0.95) 100%);
+}
+
+.button-icon {
+  width: clamp(20px, 2.5vw, 26px);
+  height: clamp(20px, 2.5vw, 26px);
+  image-rendering: pixelated;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Time Display */
+.time-display {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(0.7rem, 1.5vw, 1rem);
+  background: linear-gradient(180deg, rgba(139, 69, 19, 0.95) 0%, rgba(101, 67, 33, 0.95) 100%);
+  border: 3px solid rgba(0, 0, 0, 0.8);
+  box-shadow: 
+    inset 2px 2px 0 rgba(255, 255, 255, 0.3),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.5),
+    0 4px 0 rgba(26, 26, 26, 0.8);
+  padding: 10px 20px;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+  border-radius: 4px;
+  z-index: 10;
+  backdrop-filter: blur(3px);
 }
 
 /* Title Section with Inline Greeting */
@@ -164,12 +287,28 @@
 }
 
 /* Overworld Theme */
-.home-container.overworld .greeting-text-inline {
-  color: #8FCA5C;
-  text-shadow: 
-    4px 4px 0 #000000,
-    -2px -2px 0 #000000,
-    0 0 10px rgba(143, 202, 92, 0.4);
+.home-container.overworld .welcome-box,
+.home-container.overworld .time-display {
+  background: linear-gradient(180deg, rgba(133, 79, 43, 0.95) 0%, rgba(97, 55, 31, 0.95) 100%);
+  border-color: rgba(97, 55, 31, 0.9);
+}
+
+.home-container.overworld .minecraft-button.download-resume {
+  background: linear-gradient(180deg, rgba(143, 202, 92, 0.95) 0%, rgba(112, 178, 55, 0.95) 100%);
+  border-color: rgba(97, 55, 31, 0.9);
+}
+
+.home-container.overworld .minecraft-button.download-resume:hover {
+  background: linear-gradient(180deg, rgba(163, 222, 112, 0.95) 0%, rgba(132, 198, 75, 0.95) 100%);
+}
+
+.home-container.overworld .minecraft-button.contact-me {
+  background: linear-gradient(180deg, rgba(133, 79, 43, 0.95) 0%, rgba(97, 55, 31, 0.95) 100%);
+  border-color: rgba(97, 55, 31, 0.9);
+}
+
+.home-container.overworld .minecraft-button.contact-me:hover {
+  background: linear-gradient(180deg, rgba(153, 99, 63, 0.95) 0%, rgba(117, 75, 51, 0.95) 100%);
 }
 
 .home-container.overworld .minecraft-title {
@@ -194,12 +333,38 @@
 }
 
 /* Nether Theme */
-.home-container.nether .greeting-text-inline {
-  color: #FF6B1A;
-  text-shadow: 
-    4px 4px 0 #000000,
-    -2px -2px 0 #000000,
-    0 0 10px rgba(255, 107, 26, 0.4);
+.home-container.nether .welcome-box,
+.home-container.nether .time-display {
+  background: linear-gradient(180deg, rgba(139, 31, 31, 0.95) 0%, rgba(92, 16, 16, 0.95) 100%);
+  border-color: rgba(26, 10, 10, 0.9);
+}
+
+.home-container.nether .minecraft-button.download-resume {
+  background: linear-gradient(180deg, rgba(255, 107, 26, 0.95) 0%, rgba(139, 31, 31, 0.95) 100%);
+  border-color: rgba(26, 10, 10, 0.9);
+}
+
+.home-container.nether .minecraft-button.download-resume:hover {
+  background: linear-gradient(180deg, rgba(255, 179, 71, 0.95) 0%, rgba(255, 107, 26, 0.95) 100%);
+  box-shadow: 
+    inset 2px 2px 0 rgba(255, 255, 255, 0.4),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.6),
+    0 6px 0 rgba(26, 26, 26, 0.8),
+    0 0 15px rgba(255, 107, 26, 0.4);
+}
+
+.home-container.nether .minecraft-button.contact-me {
+  background: linear-gradient(180deg, rgba(92, 16, 16, 0.95) 0%, rgba(26, 10, 10, 0.95) 100%);
+  border-color: rgba(26, 10, 10, 0.9);
+}
+
+.home-container.nether .minecraft-button.contact-me:hover {
+  background: linear-gradient(180deg, rgba(139, 31, 31, 0.95) 0%, rgba(92, 16, 16, 0.95) 100%);
+  box-shadow: 
+    inset 2px 2px 0 rgba(255, 255, 255, 0.4),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.6),
+    0 6px 0 rgba(26, 26, 26, 0.8),
+    0 0 15px rgba(255, 107, 26, 0.4);
 }
 
 .home-container.nether .minecraft-title {
