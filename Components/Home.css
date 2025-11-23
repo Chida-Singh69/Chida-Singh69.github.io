@@ -16,27 +16,38 @@
   gap: 15px;
 }
 
-/* Greeting Box */
-.greeting-box {
-  background: linear-gradient(180deg, rgba(198, 198, 198, 0.95) 0%, rgba(139, 139, 139, 0.95) 100%);
-  border: 3px solid rgba(0, 0, 0, 0.8);
-  box-shadow: 
-    inset 2px 2px 0 rgba(255, 255, 255, 0.4),
-    inset -2px -2px 0 rgba(0, 0, 0, 0.6),
-    0 4px 0 rgba(26, 26, 26, 0.8);
-  padding: 12px 25px;
-  position: relative;
-  z-index: 10;
-  backdrop-filter: blur(3px);
+/* Title Section with Inline Greeting */
+.title-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
 }
 
-.greeting-text {
+.title-with-greeting {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(0.8rem, 2vw, 1.5rem);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.greeting-inline {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.greeting-text-inline {
   font-family: 'Press Start 2P', cursive;
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.2rem, 4vw, 2rem);
   color: #fff;
-  text-shadow: 2px 2px 0 #000;
+  text-shadow: 
+    4px 4px 0 #000000,
+    -2px -2px 0 #000000,
+    0 0 10px rgba(255, 255, 255, 0.3);
   image-rendering: pixelated;
-  text-align: center;
+  display: inline-block;
 }
 
 /* Main Title */
@@ -153,9 +164,12 @@
 }
 
 /* Overworld Theme */
-.home-container.overworld .greeting-box {
-  background: linear-gradient(180deg, rgba(143, 202, 92, 0.95) 0%, rgba(112, 178, 55, 0.95) 100%);
-  border-color: rgba(97, 55, 31, 0.9);
+.home-container.overworld .greeting-text-inline {
+  color: #8FCA5C;
+  text-shadow: 
+    4px 4px 0 #000000,
+    -2px -2px 0 #000000,
+    0 0 10px rgba(143, 202, 92, 0.4);
 }
 
 .home-container.overworld .minecraft-title {
@@ -180,9 +194,12 @@
 }
 
 /* Nether Theme */
-.home-container.nether .greeting-box {
-  background: linear-gradient(180deg, rgba(139, 31, 31, 0.95) 0%, rgba(92, 16, 16, 0.95) 100%);
-  border-color: rgba(26, 10, 10, 0.9);
+.home-container.nether .greeting-text-inline {
+  color: #FF6B1A;
+  text-shadow: 
+    4px 4px 0 #000000,
+    -2px -2px 0 #000000,
+    0 0 10px rgba(255, 107, 26, 0.4);
 }
 
 .home-container.nether .minecraft-title {
@@ -271,8 +288,8 @@
     padding: 15px;
   }
   
-  .greeting-box {
-    padding: 10px 20px;
+  .title-with-greeting {
+    gap: 0.8rem;
   }
 }
 
@@ -282,8 +299,10 @@
     gap: 10px;
   }
 
-  .greeting-box {
-    padding: 8px 15px;
+  .title-with-greeting {
+    gap: 0.6rem;
+    flex-direction: column;
+    align-items: center;
   }
   
   .stats-bar {
@@ -307,8 +326,10 @@
     gap: 8px;
   }
 
-  .greeting-box {
-    padding: 6px 12px;
+  .title-with-greeting {
+    gap: 0.4rem;
+    flex-direction: column;
+    align-items: center;
   }
   
   .stats-bar {

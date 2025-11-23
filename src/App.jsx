@@ -107,26 +107,18 @@ function App() {
       />
       <div className="video-overlay"></div>
       
-      {/* Top info bar */}
-      <div className="minecraft-info-bar">
-        <div className="player-info">
-          <h1>Chidananda Singh A</h1>
-          <p>Computer Science & Design</p>
-          <p>Bengaluru, Karnataka</p>
+      {/* Left Sidebar - Info & Mode Toggle */}
+      <div className="minecraft-left-sidebar">
+        <div className="sidebar-item home-button" onClick={() => handleNavClick('home')} data-tooltip="Home">
+          <img src="/assets/minecraft_grass_block.png" alt="Home" className="sidebar-icon" />
         </div>
-        <div className="mode-slider-container" onClick={toggleMode}>
-          <div className={`mode-slider ${mode}`}>
-            <div className="slider-track">
-              <span className="slider-label left">Overworld</span>
-              <span className="slider-label right">Nether</span>
-            </div>
-            <div className="slider-thumb">
-              <img 
-                src={mode === 'overworld' ? '/src/assets/minecraft_grass_block.png' : '/src/assets/minecraft_netherrack.png'} 
-                alt={mode} 
-                className="slider-icon"
-              />
-            </div>
+        <div className="sidebar-item mode-toggle" onClick={toggleMode} data-tooltip={mode === 'overworld' ? 'Switch to Nether' : 'Switch to Overworld'}>
+          <div className="mode-toggle-button">
+            <img 
+              src={mode === 'overworld' ? '/src/assets/minecraft_grass_block.png' : '/src/assets/minecraft_netherrack.png'} 
+              alt={mode} 
+              className="mode-toggle-icon"
+            />
           </div>
         </div>
       </div>
@@ -147,49 +139,42 @@ function App() {
         </AnimatePresence>
       </div>
       
-      {/* Bottom navigation bar */}
-      <div className="minecraft-bottom-nav">
+      {/* Right Sidebar - Navigation */}
+      <div className="minecraft-right-sidebar">
         <div 
-          className={`nav-item ${currentSection === 'home' ? 'active' : ''}`}
-          onClick={() => handleNavClick('home')}
-        >
-          <img src="/assets/minecraft_grass_block.png" alt="Home" className="minecraft-icon" />
-          <div className="nav-label">HOME</div>
-        </div>
-        <div 
-          className={`nav-item ${currentSection === 'projects' ? 'active' : ''}`}
+          className={`sidebar-nav-item ${currentSection === 'projects' ? 'active' : ''}`}
           onClick={() => handleNavClick('projects')}
+          data-tooltip="Projects"
         >
-          <img src="/assets/minecraft_crafting_table.png" alt="Projects" className="minecraft-icon" />
-          <div className="nav-label">PROJECTS</div>
+          <img src="/assets/minecraft_crafting_table.png" alt="Projects" className="sidebar-nav-icon" />
         </div>
         <div 
-          className={`nav-item ${currentSection === 'experience' ? 'active' : ''}`}
+          className={`sidebar-nav-item ${currentSection === 'experience' ? 'active' : ''}`}
           onClick={() => handleNavClick('experience')}
+          data-tooltip="Experience"
         >
-          <img src="/assets/minecraft_experience_bottle.png" alt="Experience" className="minecraft-icon" />
-          <div className="nav-label">EXPERIENCE</div>
+          <img src="/assets/minecraft_experience_bottle.png" alt="Experience" className="sidebar-nav-icon" />
         </div>
         <div 
-          className={`nav-item ${currentSection === 'skills' ? 'active' : ''}`}
+          className={`sidebar-nav-item ${currentSection === 'skills' ? 'active' : ''}`}
           onClick={() => handleNavClick('skills')}
+          data-tooltip="Skills"
         >
-          <img src="/assets/minecraft_enchanted_book.png" alt="Skills" className="minecraft-icon" />
-          <div className="nav-label">SKILLS</div>
+          <img src="/assets/minecraft_anvil.png" alt="Skills" className="sidebar-nav-icon" />
         </div>
         <div 
-          className={`nav-item ${currentSection === 'about' ? 'active' : ''}`}
+          className={`sidebar-nav-item ${currentSection === 'about' ? 'active' : ''}`}
           onClick={() => handleNavClick('about')}
+          data-tooltip="About"
         >
-          <img src="/assets/minecraft_written_book.png" alt="About" className="minecraft-icon" />
-          <div className="nav-label">ABOUT</div>
+          <img src="/assets/minecraft_player_head.png" alt="About" className="sidebar-nav-icon" />
         </div>
         <div 
-          className={`nav-item ${currentSection === 'contact' ? 'active' : ''}`}
+          className={`sidebar-nav-item ${currentSection === 'contact' ? 'active' : ''}`}
           onClick={() => handleNavClick('contact')}
+          data-tooltip="Contact"
         >
-          <img src="/assets/minecraft_compass.png" alt="Contact" className="minecraft-icon" />
-          <div className="nav-label">CONTACT</div>
+          <img src="/assets/minecraft_writable_book.png" alt="Contact" className="sidebar-nav-icon" />
         </div>
       </div>
     </div>
