@@ -1,7 +1,25 @@
-/* Minecraft Projects CSS - Matching Experiences Layout */
+/* Minecraft Projects – Inventory + Details Layout */
 
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+:root {
+  /* Palette inspired by Minecraft UI */
+  --mc-grass-light: #7fb238;
+  --mc-grass-dark: #3e5f24;
+  --mc-wood-light: #c58a3b;
+  --mc-wood-dark: #7b4b1f;
+  --mc-border-dark: #252016;
+  --mc-accent: #46c046;
+  --mc-accent-soft: #3e9840;
+  --mc-header-text: #ffe96b;
+  --mc-paper: #f5f1e6;
+  --mc-text: #111;
+  --mc-tooltip-bg: rgba(16, 0, 16, 0.94);
+  --mc-transition-fast: 0.15s ease-out;
+  --mc-font-pixel: 'Press Start 2P', system-ui, sans-serif;
+}
+
+/* Global reset-ish */
 * {
   box-sizing: border-box;
 }
@@ -9,133 +27,155 @@
 .minecraft-projects {
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
 
+/* Section title */
 .minecraft-section-title {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  padding: 10px 12px;
   color: #fff;
-  text-shadow: 2px 2px 0px #000;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  border: 4px solid var(--mc-border-dark);
+  text-shadow: 2px 2px 0 #000;
   text-align: left;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border: 3px solid var(--minecraft-ui-border, #373737);
 }
 
+/* Main container: inventory on the left, details on the right */
 .minecraft-projects-container {
   display: flex;
   flex: 1;
-  gap: 20px;
-}
-
-/* Inventory Grid */
-.minecraft-inventory {
-  flex: 1;
-  background-color: var(--minecraft-ui-brown, #c6c6c6);
-  border: 3px solid var(--minecraft-ui-border, #373737);
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
+  gap: 16px;
+  max-height: calc(100vh - 120px);
   overflow: hidden;
 }
 
-.inventory-grid {
+/* Inventory Grid Panel */
+.minecraft-inventory {
   flex: 1;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  gap: 4px;
-  height: 100%;
-  width: 100%;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  border: 4px solid var(--mc-border-dark);
 }
 
+/* Dirt grid */
+.inventory-grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  padding-top: 18px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  align-content: start;
+}
+
+/* Individual slots */
 .inventory-slot {
-  background-color: var(--minecraft-inventory-slot, #8B8B8B);
-  border: 2px solid var(--minecraft-inventory-border, #373737);
-  aspect-ratio: 1;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  aspect-ratio: 1;
+  min-width: 0;
+  min-height: 0;
   cursor: pointer;
-  transition: all 0.1s ease;
+
+  background-color: var(--mc-wood-light);
+  border: 2px solid var(--mc-wood-dark);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: background-color var(--mc-transition-fast),
+              box-shadow var(--mc-transition-fast),
+              transform var(--mc-transition-fast);
 }
 
 .inventory-slot:hover {
-  background-color: #9a9a9a;
+  background-color: #e3a74d;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+    0 0 8px rgba(0, 0, 0, 0.65);
+  transform: translateY(-1px);
 }
 
 .inventory-slot.selected {
-  box-shadow: 0 0 0 2px yellow;
+  box-shadow: 0 0 0 3px #ffd54f, inset 0 0 0 1px rgba(0, 0, 0, 0.4);
 }
 
+/* Item icon inside a slot */
 .inventory-item {
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
+  padding: 12%;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .item-icon {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: contain;
   image-rendering: pixelated;
-  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
-  transform: rotate(0deg);
-  image-orientation: from-image;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8));
 }
 
+/* Tooltip */
 .item-tooltip {
-  position: absolute;
-  bottom: 110%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--minecraft-tooltip, rgba(16, 0, 16, 0.94));
+  position: fixed;
+  z-index: 10000;
+  max-width: 200px;
+  padding: 8px 10px;
+  background-color: var(--mc-tooltip-bg);
   color: #fff;
-  padding: 5px 10px;
-  border: 1px solid var(--minecraft-ui-dark, #555555);
+  border: 2px solid #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: var(--mc-font-pixel);
   font-size: 0.6rem;
-  white-space: nowrap;
-  z-index: 1000;
-  pointer-events: none;
+  line-height: 1.4;
+  text-align: center;
   text-shadow: 1px 1px 0 #000;
+  white-space: normal;
+  pointer-events: none;
 }
 
-/* Project Details */
+/* Project Details Panel */
 .minecraft-project-details {
   flex: 1;
-  background-color: var(--minecraft-ui-brown, #c6c6c6);
-  border: 3px solid var(--minecraft-ui-border, #373737);
-  padding: 15px;
+  padding: 14px;
   display: flex;
   flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  border: 4px solid var(--mc-border-dark);
 }
 
+/* Header area with icon + title */
 .project-display {
-  background-color: var(--minecraft-ui-dark, #555555);
-  border: 2px solid var(--minecraft-black, #191919);
-  padding: 10px;
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
+  padding: 10px;
+  background-color: rgba(33, 51, 21, 0.95);
+  border: 3px solid var(--mc-border-dark);
 }
 
 .project-icon-large {
-  font-size: 2.5rem;
-  background-color: var(--minecraft-inventory-slot, #8B8B8B);
-  border: 2px solid var(--minecraft-inventory-border, #373737);
+  flex-shrink: 0;
   width: 60px;
   height: 60px;
+  margin-right: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 15px;
-  flex-shrink: 0;
+  border: 3px solid var(--mc-wood-dark);
+  background-color: var(--mc-wood-light);
   image-rendering: pixelated;
 }
 
@@ -144,8 +184,6 @@
   height: 90%;
   object-fit: contain;
   image-rendering: pixelated;
-  transform: rotate(0deg);
-  image-orientation: from-image;
 }
 
 .project-title-section {
@@ -154,17 +192,19 @@
 }
 
 .project-name {
+  margin: 0 0 4px 0;
   font-size: 1rem;
-  color: white;
-  margin: 0 0 5px 0;
+  color: #ffffff;
+  text-shadow: 2px 2px 0 #000;
 }
 
 .project-counter {
-  font-size: 0.6rem;
-  color: #ddd;
   margin: 0;
+  font-size: 0.65rem;
+  color: #e0e0e0;
 }
 
+/* Info boxes */
 .project-info-section {
   flex: 1;
   display: flex;
@@ -174,107 +214,123 @@
 }
 
 .info-box {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  background-color: var(--minecraft-ui-dark, #555555);
-  border: 2px solid var(--minecraft-black, #191919);
+  flex: 1;
+  border: 3px solid #000;
+  background-color: rgba(20, 20, 20, 0.95);
   overflow: hidden;
 }
 
 .info-box-header {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 8px 10px;
+  padding: 7px 10px;
+  font-family: var(--mc-font-pixel);
   font-size: 0.7rem;
-  color: #ffeb3b;
+  color: var(--mc-header-text);
+  background-color: #1f3f18;
+  border-bottom: 3px solid #000;
   text-shadow: 1px 1px 0 #000;
-  border-bottom: 2px solid var(--minecraft-black, #191919);
-  font-family: 'Press Start 2P', system-ui, sans-serif;
 }
 
+/* white “book” area */
 .info-box-content {
   flex: 1;
-  background-color: white;
-  color: black;
-  padding: 12px;
+  padding: 10px 12px;
   font-size: 0.7rem;
   line-height: 1.6;
-  overflow-y: auto;
   text-align: left;
+  color: var(--mc-text);
+  background-color: var(--mc-paper);
+  overflow-y: auto;
 }
 
 .info-box-content.tech-stack {
   font-weight: 600;
-  color: #2c5282;
+  color: #23436a;
 }
 
+/* Action buttons */
 .project-action-buttons {
   display: flex;
-  justify-content: space-between;
   gap: 10px;
-  margin-top: 10px;
+  margin: 10px 0 0;
   flex-shrink: 0;
 }
 
 .minecraft-action-button {
-  background-color: var(--minecraft-ui-dark, #555555);
-  border: 2px solid var(--minecraft-black, #191919);
-  color: white;
-  padding: 8px 15px;
-  font-size: 0.7rem;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+  margin: 0 0 10px 0;
+  padding: 8px 14px;
+  font-family: var(--mc-font-pixel);
+  font-size: 0.65rem;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.2s;
-  font-family: 'Press Start 2P', system-ui, sans-serif;
+
+  background-color: var(--mc-accent-soft);
+  border: 3px solid #000;
+  color: #fff;
+  box-shadow: 0 2px 0 #1b3b16;
+  transition: background-color var(--mc-transition-fast),
+              box-shadow var(--mc-transition-fast),
+              transform var(--mc-transition-fast);
 }
 
 .minecraft-action-button:hover {
-  background-color: var(--minecraft-green, #61b533);
+  background-color: var(--mc-accent);
+  box-shadow: 0 0 10px rgba(70, 192, 70, 0.75);
+  transform: translateY(-1px);
 }
 
 .button-icon {
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
+/* Pagination footer */
 .pagination-controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--minecraft-ui-dark, #555555);
-  padding: 10px;
   margin-top: auto;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1f3f18;
+  border-top: 3px solid #000;
 }
 
 .nav-button {
-  background-color: var(--minecraft-inventory-slot, #8B8B8B);
-  border: 2px solid var(--minecraft-black, #191919);
-  color: white;
-  font-size: 0.6rem;
   padding: 5px 10px;
+  font-family: var(--mc-font-pixel);
+  font-size: 0.6rem;
   cursor: pointer;
-  font-family: 'Press Start 2P', system-ui, sans-serif;
-  transition: all 0.2s;
+
+  background-color: #3b5e24;
+  border: 3px solid #000;
+  color: #fff;
+  box-shadow: 0 2px 0 #1b3b16;
+  transition: background-color var(--mc-transition-fast),
+              box-shadow var(--mc-transition-fast),
+              transform var(--mc-transition-fast);
 }
 
 .nav-button:hover {
-  background-color: var(--minecraft-green, #61b533);
+  background-color: var(--mc-accent);
+  box-shadow: 0 0 8px rgba(70, 192, 70, 0.8);
+  transform: translateY(-1px);
 }
 
 .page-indicator {
   font-size: 0.6rem;
-  color: white;
+  color: #fff;
 }
 
-/* Responsive design */
+/* Responsive tweaks */
 @media (max-width: 768px) {
   .minecraft-projects-container {
     flex-direction: column;
   }
-  
+
   .minecraft-inventory {
-    max-height: 300px;
+    max-height: 280px;
   }
 }
