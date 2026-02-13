@@ -7,6 +7,7 @@
   height: 100%;
   width: 100%;
   padding: 20px;
+  overflow-y: auto;
 }
 
 .minecraft-chest-container {
@@ -15,7 +16,7 @@
   border: 4px solid #00ffbf;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   max-width: 900px;
-  width: 100%;
+  width: 95%;
 }
 
 .chest-header {
@@ -107,11 +108,30 @@
 }
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .minecraft-chest-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
+  .skills-section {
+    padding: 15px 10px;
+  }
+  
+  .minecraft-chest-container {
+    width: 98%;
+    border-width: 3px;
+  }
+  
   .minecraft-chest-grid {
     grid-template-columns: repeat(5, 1fr);
     gap: 3px;
     padding: 6px;
+  }
+  
+  .chest-header {
+    padding: 6px 10px;
   }
   
   .chest-title {
@@ -122,22 +142,72 @@
     font-size: 0.6rem;
     padding: 4px 8px;
   }
+  
+  .chest-slot:hover {
+    transform: scale(1.03);
+  }
+}
+
+@media (max-width: 640px) {
+  .minecraft-chest-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+  }
 }
 
 @media (max-width: 480px) {
+  .skills-section {
+    padding: 10px 5px;
+  }
+  
+  .minecraft-chest-container {
+    width: 100%;
+    border-width: 2px;
+  }
+  
   .minecraft-chest-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2px;
     padding: 4px;
   }
   
+  .chest-header {
+    padding: 5px 8px;
+  }
+  
   .chest-title {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
+  }
+  
+  .skill-logo {
+    width: 70%;
+    height: 70%;
   }
   
   .skill-tooltip {
-    font-size: 0.55rem;
+    font-size: 0.5rem;
     padding: 3px 6px;
+  }
+  
+  .chest-slot:hover {
+    transform: scale(1.02);
+  }
+}
+
+@media (max-width: 360px) {
+  .minecraft-chest-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    padding: 3px;
+  }
+  
+  .chest-title {
+    font-size: 0.55rem;
+  }
+  
+  .skill-tooltip {
+    font-size: 0.45rem;
+    padding: 2px 4px;
   }
 }
 

@@ -18,7 +18,7 @@
 
 /* Welcome Box */
 .welcome-box {
-  background: linear-gradient(180deg, rgba(139, 69, 19, 0.95) 0%, rgba(101, 67, 33, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(62, 95, 36, 0.95) 0%, rgba(31, 63, 24, 0.95) 100%);
   border: 3px solid rgba(0, 0, 0, 0.8);
   box-shadow: 
     inset 2px 2px 0 rgba(255, 255, 255, 0.3),
@@ -107,11 +107,13 @@
 }
 
 .minecraft-button.download-resume {
-  background-color: #3e5f24;
+  background: linear-gradient(180deg, rgba(62, 95, 36, 0.95) 0%, rgba(31, 63, 24, 0.95) 100%);
+  border-color: rgba(31, 63, 24, 0.9);
 }
 
 .minecraft-button.contact-me {
-  background: linear-gradient(180deg, rgba(160, 82, 45, 0.95) 0%, rgba(139, 69, 19, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(62, 95, 36, 0.95) 0%, rgba(31, 63, 24, 0.95) 100%);
+  border-color: rgba(31, 63, 24, 0.9);
 }
 
 .button-icon {
@@ -125,7 +127,7 @@
 .time-display {
   font-family: 'Press Start 2P', cursive;
   font-size: clamp(0.7rem, 1.5vw, 1rem);
-  background: linear-gradient(180deg, rgba(139, 69, 19, 0.95) 0%, rgba(101, 67, 33, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(62, 95, 36, 0.95) 0%, rgba(31, 63, 24, 0.95) 100%);
   border: 3px solid rgba(0, 0, 0, 0.8);
   box-shadow: 
     inset 2px 2px 0 rgba(255, 255, 255, 0.3),
@@ -178,13 +180,13 @@
   font-family: 'Press Start 2P', cursive;
   font-size: clamp(2rem, 5vw, 3.5rem);
   text-align: center;
-  color: #ffffff;
+  color: #ffe96b;
   text-shadow: 
     4px 4px 0 #000000, 
     -2px -2px 0 #000000,
     2px -2px 0 #000000,
     -2px 2px 0 #000000,
-    0 0 20px rgba(255, 255, 255, 0.5);
+    0 0 20px rgba(255, 233, 107, 0.5);
   letter-spacing: 2px;
   image-rendering: pixelated;
   position: relative;
@@ -203,13 +205,13 @@
   font-family: 'Press Start 2P', cursive;
   font-size: clamp(0.7rem, 1.8vw, 1.1rem);
   text-align: center;
-  color: #FFD700;
+  color: #ffe96b;
   text-shadow: 
     3px 3px 0 #000000,
     -1px -1px 0 #000000,
     1px -1px 0 #000000,
     -1px 1px 0 #000000,
-    0 0 15px rgba(255, 215, 0, 0.6);
+    0 0 15px rgba(255, 233, 107, 0.6);
   letter-spacing: 1px;
   line-height: 1.6;
   image-rendering: pixelated;
@@ -227,9 +229,9 @@
 }
 
 .stat-item {
-  background: linear-gradient(180deg, rgba(90, 90, 90, 0.95) 0%, rgba(58, 58, 58, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(62, 95, 36, 0.95) 0%, rgba(31, 63, 24, 0.95) 100%);
   border: 3px solid;
-  border-color: rgba(139, 139, 139, 0.8) rgba(55, 55, 55, 0.8) rgba(55, 55, 55, 0.8) rgba(139, 139, 139, 0.8);
+  border-color: rgba(255, 233, 107, 0.4) rgba(31, 63, 24, 0.8) rgba(31, 63, 24, 0.8) rgba(255, 233, 107, 0.4);
   padding: 10px 15px;
   min-width: 70px;
   display: flex;
@@ -254,16 +256,16 @@
 .stat-value {
   font-family: 'Press Start 2P', cursive;
   font-size: clamp(0.6rem, 1.5vw, 0.9rem);
-  color: #FFD700;
+  color: #ffe96b;
   text-shadow: 
     2px 2px 0 #000,
-    0 0 10px rgba(255, 215, 0, 0.5);
+    0 0 10px rgba(255, 233, 107, 0.5);
   letter-spacing: 1px;
 }
 
 /* Quote Box */
 .quote-box {
-  background: linear-gradient(180deg, rgba(74, 74, 74, 0.95) 0%, rgba(42, 42, 42, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(62, 95, 36, 0.95) 0%, rgba(31, 63, 24, 0.95) 100%);
   border: 3px solid rgba(0, 0, 0, 0.8);
   box-shadow: 
     inset 2px 2px 0 rgba(255, 255, 255, 0.2),
@@ -289,47 +291,74 @@
 /* Overworld Theme */
 .home-container.overworld .welcome-box,
 .home-container.overworld .time-display {
-  background: linear-gradient(180deg, rgba(133, 79, 43, 0.95) 0%, rgba(97, 55, 31, 0.95) 100%);
-  border-color: rgba(97, 55, 31, 0.9);
+  background: linear-gradient(180deg, rgba(62, 95, 36, 0.95) 0%, rgba(31, 63, 24, 0.95) 100%);
+  border-color: rgba(31, 63, 24, 0.9);
 }
 
 .home-container.overworld .minecraft-button.download-resume {
-  background: linear-gradient(180deg, rgba(143, 202, 92, 0.95) 0%, rgba(112, 178, 55, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(133, 79, 43, 0.95) 0%, rgba(97, 55, 31, 0.95) 100%);
   border-color: rgba(97, 55, 31, 0.9);
 }
 
 .home-container.overworld .minecraft-button.download-resume:hover {
-  background: linear-gradient(180deg, rgba(163, 222, 112, 0.95) 0%, rgba(132, 198, 75, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(153, 99, 63, 0.95) 0%, rgba(117, 75, 51, 0.95) 100%);
+  box-shadow: 
+    inset 2px 2px 0 rgba(255, 255, 255, 0.4),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.6),
+    0 6px 0 rgba(26, 26, 26, 0.8),
+    0 0 15px rgba(153, 99, 63, 0.4);
 }
 
 .home-container.overworld .minecraft-button.contact-me {
-  background: linear-gradient(180deg, rgba(133, 79, 43, 0.95) 0%, rgba(97, 55, 31, 0.95) 100%);
-  border-color: rgba(97, 55, 31, 0.9);
+  background: linear-gradient(180deg, rgba(62, 95, 36, 0.95) 0%, rgba(31, 63, 24, 0.95) 100%);
+  border-color: rgba(31, 63, 24, 0.9);
 }
 
 .home-container.overworld .minecraft-button.contact-me:hover {
-  background: linear-gradient(180deg, rgba(153, 99, 63, 0.95) 0%, rgba(117, 75, 51, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(70, 192, 70, 0.95) 0%, rgba(62, 95, 36, 0.95) 100%);
+  box-shadow: 
+    inset 2px 2px 0 rgba(255, 255, 255, 0.4),
+    inset -2px -2px 0 rgba(0, 0, 0, 0.6),
+    0 6px 0 rgba(26, 26, 26, 0.8),
+    0 0 15px rgba(70, 192, 70, 0.4);
 }
 
 .home-container.overworld .minecraft-title {
-  color: #8FCA5C;
+  color: #ffe96b;
   text-shadow: 
     4px 4px 0 #000000,
     -2px -2px 0 #000000,
     2px -2px 0 #000000,
     -2px 2px 0 #000000,
-    0 0 25px rgba(143, 202, 92, 0.7),
-    0 0 35px rgba(112, 178, 55, 0.5);
+    0 0 25px rgba(255, 233, 107, 0.7),
+    0 0 35px rgba(255, 233, 107, 0.5);
+}
+
+.home-container.overworld .minecraft-subtitle {
+  color: #ffe96b;
+  text-shadow: 
+    3px 3px 0 #000000,
+    -1px -1px 0 #000000,
+    1px -1px 0 #000000,
+    -1px 1px 0 #000000,
+    0 0 15px rgba(255, 233, 107, 0.6);
 }
 
 .home-container.overworld .stat-item {
-  background: linear-gradient(180deg, rgba(133, 79, 43, 0.95) 0%, rgba(97, 55, 31, 0.95) 100%);
-  border-color: rgba(194, 131, 64, 0.8) rgba(97, 55, 31, 0.8) rgba(97, 55, 31, 0.8) rgba(194, 131, 64, 0.8);
+  background: linear-gradient(180deg, rgba(62, 95, 36, 0.95) 0%, rgba(31, 63, 24, 0.95) 100%);
+  border-color: rgba(255, 233, 107, 0.4) rgba(31, 63, 24, 0.8) rgba(31, 63, 24, 0.8) rgba(255, 233, 107, 0.4);
+}
+
+.home-container.overworld .stat-value {
+  color: #ffe96b;
+  text-shadow: 
+    2px 2px 0 #000,
+    0 0 10px rgba(255, 233, 107, 0.5);
 }
 
 .home-container.overworld .quote-box {
-  background: linear-gradient(180deg, rgba(133, 79, 43, 0.95) 0%, rgba(97, 55, 31, 0.95) 100%);
-  border-color: rgba(97, 55, 31, 0.9);
+  background: linear-gradient(180deg, rgba(62, 95, 36, 0.95) 0%, rgba(31, 63, 24, 0.95) 100%);
+  border-color: rgba(31, 63, 24, 0.9);
 }
 
 /* Nether Theme */
@@ -395,6 +424,13 @@
 .home-container.nether .stat-item {
   background: linear-gradient(180deg, rgba(92, 16, 16, 0.95) 0%, rgba(26, 10, 10, 0.95) 100%);
   border-color: rgba(255, 107, 26, 0.8) rgba(26, 10, 10, 0.8) rgba(26, 10, 10, 0.8) rgba(255, 107, 26, 0.8);
+}
+
+.home-container.nether .stat-value {
+  color: #FFB347;
+  text-shadow: 
+    2px 2px 0 #000,
+    0 0 10px rgba(255, 179, 71, 0.5);
 }
 
 .home-container.nether .quote-box {
