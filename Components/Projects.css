@@ -336,3 +336,54 @@
     max-height: 280px;
   }
 }
+
+/* Nether Theme Overrides */
+.nether .project-display {
+  background-color: #5C1010;
+  border-color: #1A0A0A;
+}
+
+.nether .info-box-header {
+  background-color: #8B1F1F;
+  color: #FFB347;
+}
+
+.nether .info-box {
+  border-color: #1A0A0A;
+}
+
+.nether .minecraft-action-button {
+  background-color: #FF6B1A;
+  border-color: #1A0A0A;
+}
+
+.nether .minecraft-action-button:hover {
+  background-color: #FFB347;
+  box-shadow: 0 0 10px rgba(255, 107, 26, 0.75);
+}
+
+.nether .pagination-controls {
+  background-color: #5C1010;
+  border-color: #1A0A0A;
+}
+
+.nether .nav-button {
+  background-color: #8B1F1F;
+  border-color: #1A0A0A;
+}
+
+.nether .nav-button:hover {
+  background-color: #FF6B1A;
+  box-shadow: 0 0 8px rgba(255, 107, 26, 0.8);
+}
+
+.nether .inventory-slot:hover {
+  background-color: rgba(255, 107, 26, 0.3);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 179, 71, 0.18),
+    0 0 8px rgba(255, 107, 26, 0.65);
+}
+
+.nether .inventory-slot.selected {
+  box-shadow: 0 0 0 3px #FFB347, inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+}

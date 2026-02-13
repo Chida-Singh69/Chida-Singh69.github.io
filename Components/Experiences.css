@@ -69,19 +69,19 @@
   top: 0;
   bottom: 0;
   width: 16px;
-  background: #8b1a1a;
-  border-right: 2px solid #6b0f0f;
+  /* background: #8b1a1a; */
+  /* border-right: 2px solid #6b0f0f; */
   z-index: 1;
 }
 
 .book-page-header {
   font-family: 'Press Start 2P', monospace;
   font-size: 0.7rem;
-  color: #000;
+  color: #6B3F2E;
   text-align: center;
   padding: 14px 15px 14px 28px;
   background: transparent;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 204, 0, 0.3);
   z-index: 2;
   position: relative;
 }
@@ -91,12 +91,13 @@
   padding: 20px 25px 20px 32px;
   overflow-y: auto;
   font-family: 'Press Start 2P', monospace;
-  color: #000;
+  color: black;
   font-size: 0.6rem;
   line-height: 2.0;
-  text-align: left;
+  text-align: justify;
   z-index: 2;
   position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* Scrollbar styling */
@@ -114,10 +115,10 @@
 }
 
 .book-text {
-  color: #000;
+  color:black;
   font-size: 0.6rem;
   line-height: 2.0;
-  text-align: left;
+  text-align: justify;
   word-wrap: break-word;
 }
 
@@ -133,33 +134,33 @@
   font-family: 'Press Start 2P', monospace;
   font-size: 0.65rem;
   padding: 12px 16px;
-  background: linear-gradient(180deg, #9b9b9b 0%, #6b6b6b 100%);
-  border: 2px solid;
-  border-color: #ffffff #3a3a3a #3a3a3a #ffffff;
+  background-color: transparent;
+  border: 3px solid #1f3f18;
   color: #000;
   cursor: pointer;
   transition: all 0.1s ease;
   text-shadow: none;
-  box-shadow: 0 3px 0 #2a2a2a;
+  box-shadow: none;
 }
 
 .book-button:hover:not(:disabled) {
-  background: linear-gradient(180deg, #ababab 0%, #7b7b7b 100%);
+  background-color: #1f3f18;
+  box-shadow: 0 0 8px rgba(31, 63, 24, 0.8);
   transform: translateY(-1px);
-  box-shadow: 0 4px 0 #2a2a2a;
+  color: #fff;
 }
 
 .book-button:active:not(:disabled) {
-  transform: translateY(2px);
-  box-shadow: 0 1px 0 #2a2a2a;
+  transform: translateY(0);
+  box-shadow: 0 0 4px rgba(31, 63, 24, 0.6);
 }
 
 .book-button:disabled {
-  background: linear-gradient(180deg, #6b6b6b 0%, #4a4a4a 100%);
-  color: #2a2a2a;
+  background: #1f3f18;
+  color: #666;
   cursor: not-allowed;
-  opacity: 0.7;
-  box-shadow: 0 2px 0 #1a1a1a;
+  opacity: 0.5;
+  box-shadow: 0 2px 0 #111;
 }
 
 /* Responsive */
@@ -190,6 +191,7 @@
   }
 
   .book-spine-left {
+    background-color: white;
     width: 15px;
   }
 
@@ -206,4 +208,38 @@
     font-size: 0.5rem;
     padding: 8px 10px;
   }
+}
+
+/* Nether Theme Overrides */
+.nether .minecraft-book {
+  border-color: #FFB347;
+  box-shadow: 0 0 0 1px rgba(255, 179, 71, 0.5);
+}
+
+.nether .book-page {
+  border-color: #FFB347;
+}
+
+.nether .book-page-header {
+  color: #FFB347;
+  border-bottom-color: rgba(255, 179, 71, 0.3);
+}
+
+.nether .book-content {
+  color: #FFB347;
+}
+
+.nether .book-text {
+  color: #FFB347;
+}
+
+.nether .book-button {
+  border-color: #8B1F1F !important;
+  color: #000 !important;
+}
+
+.nether .book-button:hover:not(:disabled) {
+  background-color: #8B1F1F !important;
+  box-shadow: 0 0 8px rgba(139, 31, 31, 0.8) !important;
+  color: #FFB347 !important;
 }

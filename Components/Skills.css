@@ -10,24 +10,25 @@
 }
 
 .minecraft-chest-container {
-  background: #c6c6c6;
-  border: 2px solid #000;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  border: 4px solid #00ffbf;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   max-width: 900px;
   width: 100%;
 }
 
 .chest-header {
-  background: #c6c6c6;
+  background: transparent;
   padding: 8px 12px;
   text-align: left;
-  border-bottom: 1px solid #8b8b8b;
+  border-bottom: 2px solid #593d2a;
 }
 
 .chest-title {
   font-size: 0.9rem;
-  color: #3f3f3f;
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  text-shadow: 2px 2px 0 #000;
   letter-spacing: 1px;
 }
 
@@ -36,14 +37,13 @@
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 4px;
-  background: #c6c6c6;
+  background: transparent;
 }
 
 .chest-slot {
   aspect-ratio: 1;
-  background: #8b8b8b;
-  border: 1px solid;
-  border-color: #373737 #ffffff #ffffff #373737;
+  background: transparent;
+  border: 2px solid #593d2a;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,16 +51,16 @@
   transition: all 0.1s ease;
   cursor: pointer;
   image-rendering: pixelated;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.025);
 }
 
 .chest-slot:hover {
-  outline: 2px solid rgba(255, 255, 255, 0.5);
-  outline-offset: -2px;
+  background-color: #e3a74d;
   box-shadow: 
-    inset 0 0 0 2px rgba(255, 255, 255, 0.8),
-    0 0 12px rgba(139, 255, 139, 0.6);
-  background: rgba(139, 255, 139, 0.3);
-  border-color: #8bff8b #8bff8b #8bff8b #8bff8b;
+    inset 0 0 0 2px rgba(255, 255, 255, 0.3),
+    0 0 8px rgba(255, 204, 0, 0.6);
+  border-color: #ffcc00;
+  transform: scale(1.05);
 }
 
 .chest-slot:hover .skill-tooltip {
@@ -139,4 +139,42 @@
     font-size: 0.55rem;
     padding: 3px 6px;
   }
+}
+
+/* Overworld Theme */
+.overworld .minecraft-chest-container {
+  border-color: #1F3F18;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Nether Theme Overrides */
+.nether .minecraft-chest-container {
+  border-color: #FFB347;
+  box-shadow: 0 0 0 1px #FFB347;
+}
+
+.nether .chest-header {
+  border-bottom-color: #FFB347;
+}
+
+.nether .chest-title {
+  color: #d64747;
+}
+
+.nether .chest-slot {
+  border-color: #FFB347;
+}
+
+.nether .chest-slot:hover {
+  background-color: #8B1F1F;
+  box-shadow: 
+    inset 0 0 0 2px rgba(255, 179, 71, 0.3),
+    0 0 8px rgba(139, 31, 31, 0.6);
+  border-color: #FFB347;
+}
+
+.nether .skill-tooltip {
+  background: rgba(92, 16, 16, 0.94);
+  color: #FFB347;
+  border-color: rgba(139, 31, 31, 0.8);
 }

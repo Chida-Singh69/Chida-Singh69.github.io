@@ -6,6 +6,7 @@ const experiencesData = [
   {
     id: 1,
     company: "GiftOlexia",
+    companyUrl: "https://giftolexia.com/",
     role: "Web Development Intern",
     period: "May 2025 – Sep 2025",
     skills: ["React.js", "API Integration", "Performance Optimization", "Team Collaboration"],
@@ -20,6 +21,7 @@ const experiencesData = [
   {
     id: 2,
     company: "Shree Sai Sadhbhaavana School",
+    companyUrl: "https://www.sadhbhaavana.com/",
     role: "Web Development Intern",
     period: "Nov 2024 – Mar 2025",
     skills: ["Web Design", "UI/UX", "Wix & Figma", "Performance Optimization"],
@@ -69,7 +71,9 @@ const Experiences = ({ mode = "overworld" }) => {
 
               <div className="book-content">
                 <div className="book-text">
-                  {currentExp.company}
+                  <a href={currentExp.companyUrl} target="_blank" rel="noopener noreferrer" style={{ color: '#1f3f18', textDecoration: 'underline', cursor: 'pointer' }}>
+                    {currentExp.company}
+                  </a>
                   <br /><br />
                   {currentExp.role}
                   <br />
