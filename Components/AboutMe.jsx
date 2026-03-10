@@ -34,7 +34,7 @@ const AboutMe = ({ mode = 'overworld' }) => {
         
         <div className="minecraft-about-education">
           <div className="education-header">
-            <div className="education-icon"><img src="src\assets\minecraft_creeper_banner_pattern.png" alt="" /></div>
+            <div className="education-icon"><img src="/assets/minecraft_creeper_banner_pattern.png" alt="" /></div>
             <h3>SIDE QUESTS</h3>
           </div>
           
@@ -51,7 +51,7 @@ const AboutMe = ({ mode = 'overworld' }) => {
             
             
             <a 
-              href="/src/Certifications/Udemy_Full_Stack.pdf" 
+              href="/Certifications/Udemy_Full_Stack.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               className="education-item education-item-clickable"
@@ -61,7 +61,7 @@ const AboutMe = ({ mode = 'overworld' }) => {
             </a>
 
             <a 
-              href="/src/Certifications/Udemy-go-lang.pdf" 
+              href="/Certifications/Udemy-go-lang.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               className="education-item education-item-clickable"
@@ -71,7 +71,7 @@ const AboutMe = ({ mode = 'overworld' }) => {
             </a>
 
             <a 
-              href="/src/Certifications/1ds22cg017_ChidanandaSingh_CAD_1stAttempt.pdf" 
+              href="/Certifications/1ds22cg017_ChidanandaSingh_CAD_1stAttempt.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               className="education-item education-item-clickable"
@@ -81,7 +81,7 @@ const AboutMe = ({ mode = 'overworld' }) => {
             </a>
 
             <a 
-              href="/src/Certifications/1ds22cg017_Chidananda Singh_CSA_2ndAttempt.pdf" 
+              href="/Certifications/1ds22cg017_Chidananda Singh_CSA_2ndAttempt.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
               className="education-item education-item-clickable"

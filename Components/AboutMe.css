@@ -63,7 +63,7 @@
 
 .minecraft-scroll-content h3 {
   font-size: 1rem;
-  color: var(--mc-header-text);
+  color: #e3a74d;
   margin: 20px 0 10px 0;
   text-shadow: 2px 2px 0 #000;
   border-bottom: 2px solid rgba(255, 233, 107, 0.3);
