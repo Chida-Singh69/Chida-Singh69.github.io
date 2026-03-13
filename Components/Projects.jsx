@@ -256,7 +256,7 @@ const MinecraftProjects = ({ mode = 'overworld' }) => {
                 rel="noopener noreferrer" 
                 className="minecraft-action-button"
               >
-                VIEW CODE
+                Github
               </a>
             )}
             {project.demo && (

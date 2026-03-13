@@ -9,11 +9,11 @@ const experiencesData = [
     companyUrl: "https://www.nasdaq.com/solutions/sustainability/metrio",
     role: "SDE Intern",
     period: "Jan 2026 – Present",
-    skills: ["Go Lang", "Backend Development", "Learning Phase"],
+    skills: ["Go Lang", "Backend Development","AG UI"],
     points: [
-      "Currently working with the Metrio team at Nasdaq.",
-      "Learning Go Lang and backend development practices.",
-      "Onboarding and familiarizing with enterprise-scale systems."
+      "<Redacted>.",
+      "<Redacted>.",
+      "<Redacted>."
     ],
     logo: "/logos/nasdaq-logo-png_seeklogo-426643.webp"
   },

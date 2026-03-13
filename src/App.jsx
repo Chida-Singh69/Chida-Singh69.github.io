@@ -72,12 +72,26 @@ function App() {
         <div className="sidebar-item home-button" onClick={() => handleNavClick('home')} data-tooltip="Home">
           <img src="/assets/minecraft_ender_pearl.png" alt="Home" className="sidebar-icon" />
         </div>
-        <div className="sidebar-item mode-toggle" onClick={toggleMode} data-tooltip={mode === 'overworld' ? 'Nether' : 'Overworld'}>
-          <img 
-            src={mode === 'overworld' ? '/assets/minecraft_nether_bricks.png' : '/assets/minecraft_bricks.png'} 
-            alt={mode === 'overworld' ? 'Nether' : 'Overworld'} 
-            className="mode-toggle-icon"
-          />
+        <div className="sidebar-item mode-toggle" data-tooltip={`Mode: ${mode === 'overworld' ? 'Overworld' : 'Nether'}`}>
+          <button
+            type="button"
+            className={`mode-toggle-vertical ${mode}`}
+            onClick={toggleMode}
+            aria-label={`Switch to ${mode === 'overworld' ? 'Nether' : 'Overworld'}`}
+            title={`Switch to ${mode === 'overworld' ? 'Nether' : 'Overworld'}`}
+          >
+            <div className={`mode-state ${mode === 'overworld' ? 'active' : ''}`}>
+              <img src="/assets/minecraft_bricks.png" alt="Overworld" className="mode-state-icon" />
+              {/* <span>OVER</span> */}
+            </div>
+            <div className="mode-toggle-track">
+              <span className={`mode-toggle-thumb ${mode}`}></span>
+            </div>
+            <div className={`mode-state ${mode === 'nether' ? 'active' : ''}`}>
+              <img src="/assets/minecraft_nether_bricks.png" alt="Nether" className="mode-state-icon" />
+              {/* <span>NETH</span> */}
+            </div>
+          </button>
         </div>
       </div>
       
@@ -125,7 +139,7 @@ function App() {
           onClick={() => handleNavClick('about')}
           data-tooltip="About"
         >
-          <img src="/assets/minecraft_player_head.png" alt="About" className="sidebar-nav-icon" />
+          <img src="/logos/chida_head_logo.png" alt="About" className="sidebar-nav-icon about-nav-icon" />
         </div>
         <div 
           className={`sidebar-nav-item ${currentSection === 'contact' ? 'active' : ''}`}

@@ -10,24 +10,24 @@ const AboutMe = ({ mode = 'overworld' }) => {
       <div className="minecraft-about-container">
         <div className="minecraft-about-scroll">
           <div className="minecraft-scroll-content">
-            <h3>WHO AM I?</h3>
+            <h3>Who am I?</h3>
             <p>
-              I'm Chidananda Singh A, (chida) cause the full too long. I do random stuff with code. Fuck it we ball mentalilty or I learn by doing for in formal way. You must be thinking why the "f bomb" but this is my site (hehehehehe)
+              I'm Chidananda Singh A, part-time jester, full-time builder (outside my Minecraft village). I go by Chida for obvious reasons. I build, fail, adapt and learn, and probably build, fail, adapt and learn again.
             </p>
             
-            <h3>MY JOURNEY</h3>
+            <h3>My Journey</h3>
             <p>
-              It was pretty long. You dont even read this why bother, but for the folks who are actually reading it, I loved tinkering with my old ass P.C which led me to pirate and play games like CS 1.6 or minecraft or things that would run on the ancient P.C. From there I got into tech and here are we are.
+              It was long. Pretty long, before my goofball head came around to tinkering with actual codebases. For those of you who care, I fiddled with my ancient PC, and ended up pirating and playing games like CS 1.6, Minecraft, or things that could run on P.C. the Late. And that's pretty much all for my generic tech bro origin story, which might turn into villain origin one, if you disprove of my candidature :3
             </p>
             
-            <h3>WHAT I DO</h3>
+            <h3>What I Do</h3>
             <p>
-             I'll do whatever you ask me to (20 dollars is 20 dollars), but please pay me. I dont want to work for free. 
+             I'll do whatever I'm asked of,  20 dollars is  20 dollars (ball knowledge)
             </p>
             
-            <h3>WHEN NOT CODING</h3>
+            <h3>When I'm Not Coding</h3>
             <p>
-              I clean my workspace, find ways to blow up more money on clothes, do random shit, watch youtube, play games like Valorant (and there goes the attention, trust me I am good at it). 
+              I constantly clutter and clean my workspace, save up my salary and then blow it on clothes, partake in side quests which can range from bathing my dogs, to playing Valorant to visiting temples (a LOT of them). All that said, I'm just a chill guy with a resume.
             </p>
           </div>
         </div>

@@ -139,20 +139,103 @@
   border: none;
   padding: 0;
   width: 60px;
-  height: 60px;
+  height: auto;
+  min-height: 170px;
+  flex-direction: column;
+  gap: 0;
+  cursor: default;
 }
 
-.sidebar-item.mode-toggle .mode-toggle-icon {
+.sidebar-item.mode-toggle:hover {
+  transform: none;
+}
+
+.mode-toggle-vertical {
+  appearance: none;
+  -webkit-appearance: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  min-height: 170px;
+  border: none;
+  border-radius: 48px;
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+  padding: 4px 0;
+  cursor: pointer;
+  transition: none;
+}
+
+.mode-toggle-vertical:hover {
+  transform: none;
+}
+
+.mode-toggle-vertical:focus,
+.mode-toggle-vertical:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.mode-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  width: auto;
+  color: #fff;
+  padding: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  font-family: 'Press Start 2P', system-ui, sans-serif;
+  font-size: 0.38rem;
+  line-height: 1;
+  opacity: 0.5;
+}
+
+.mode-state.active {
+  opacity: 1;
+  transform: none;
+}
+
+.mode-state-icon {
   width: 50px;
   height: 50px;
   image-rendering: pixelated;
-  transition: all 0.2s;
+  flex-shrink: 0;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
 }
 
-.sidebar-item.mode-toggle:hover .mode-toggle-icon {
+.mode-toggle-vertical:hover .mode-state-icon {
   filter: drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
-  transform: scale(1.1);
+}
+
+.mode-toggle-track {
+  width: 30px;
+  height: 66px;
+  border: 2px solid rgba(0, 0, 0, 0.65);
+  border-radius: 999px;
+  background: transparent;
+  padding: 3px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+
+.mode-toggle-thumb {
+  display: block;
+  width: 100%;
+  height: 28px;
+  border-radius: 999px;
+  background: #ffe96b;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: none;
+}
+
+.mode-toggle-thumb.nether {
+  transform: translateY(100%);
 }
 
 /* Right Sidebar */
@@ -198,6 +281,11 @@
   image-rendering: pixelated;
   transition: all 0.2s;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.about-nav-icon {
+  width: 56px;
+  height: 56px;
 }
 
 .sidebar-nav-item:hover .sidebar-nav-icon {
@@ -325,6 +413,38 @@
     height: 50px;
     padding: 8px;
   }
+
+  .sidebar-item.mode-toggle {
+    width: 50px;
+    min-height: 145px;
+  }
+
+  .mode-toggle-vertical {
+    min-height: 145px;
+    padding: 4px 0;
+    gap: 6px;
+    border-radius: 40px;
+  }
+
+  .mode-state {
+    font-size: 0.32rem;
+    gap: 3px;
+  }
+
+  .mode-state-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .mode-toggle-track {
+    width: 22px;
+    height: 52px;
+    padding: 2px;
+  }
+
+  .mode-toggle-thumb {
+    height: 22px;
+  }
   
   .sidebar-nav-item {
     width: 50px;
@@ -340,6 +460,11 @@
   .sidebar-nav-icon {
     width: 40px;
     height: 40px;
+  }
+
+  .about-nav-icon {
+    width: 44px;
+    height: 44px;
   }
   
   .sidebar-item[data-tooltip]:hover::after,
@@ -364,12 +489,19 @@
   filter: drop-shadow(0 0 12px rgba(143, 202, 92, 0.6)) drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
 }
 
-.minecraft-world.overworld .sidebar-item.mode-toggle .mode-toggle-icon {
-  filter: drop-shadow(0 0 8px rgba(143, 202, 92, 0.6)) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+.minecraft-world.overworld .mode-state.active {
+  color: #c9f5a1;
+  text-shadow: none;
 }
 
-.minecraft-world.overworld .sidebar-item.mode-toggle:hover .mode-toggle-icon {
-  filter: drop-shadow(0 0 12px rgba(143, 202, 92, 0.8)) drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
+.minecraft-world.overworld .mode-toggle-track {
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.65);
+}
+
+.minecraft-world.overworld .mode-toggle-thumb {
+  background: #8fca5c;
+  box-shadow: none;
 }
 
 .minecraft-world.overworld .sidebar-nav-item.active .sidebar-nav-icon {
@@ -391,12 +523,19 @@
   filter: drop-shadow(0 0 15px rgba(255, 107, 26, 0.6)) drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
 }
 
-.minecraft-world.nether .sidebar-item.mode-toggle .mode-toggle-icon {
-  filter: drop-shadow(0 0 10px rgba(255, 107, 26, 0.6)) drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+.minecraft-world.nether .mode-state.active {
+  color: #ffcfb0;
+  text-shadow: none;
 }
 
-.minecraft-world.nether .sidebar-item.mode-toggle:hover .mode-toggle-icon {
-  filter: drop-shadow(0 0 15px rgba(255, 107, 26, 0.9)) drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.7));
+.minecraft-world.nether .mode-toggle-track {
+  background: transparent;
+  border-color: rgba(0, 0, 0, 0.65);
+}
+
+.minecraft-world.nether .mode-toggle-thumb {
+  background: #ff6b1a;
+  box-shadow: none;
 }
 
 .minecraft-world.nether .sidebar-nav-item.active .sidebar-nav-icon {
